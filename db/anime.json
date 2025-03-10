@@ -1,0 +1,251 @@
+[
+    {
+      "title": "Naruto",
+      "synopsis": "Naruto Uzumaki est un jeune ninja qui rêve de devenir le Hokage, le chef de son village.",
+      "genres": ["Action", "Aventure", "Shounen"],
+      "studio": "Studio Pierrot",
+      "release_date": "2002-10-03",
+      "cover_image": "../assets/images/animes/narutoCover.jpg" 
+    },
+    {
+      "title": "One Piece",
+      "synopsis": "Monkey D. Luffy, un pirate au chapeau de paille, parcourt les mers à la recherche du trésor légendaire One Piece.",
+      "genres": ["Action", "Aventure", "Comédie"],
+      "studio": "Toei Animation",
+      "release_date": "1999-10-20",
+      "cover_image": "../assets/images/animes/onePieceCover.jpg"
+    },
+    {
+      "title": "Attack on Titan",
+      "synopsis": "Dans un monde où l'humanité est au bord de l'extinction à cause des Titans, un groupe de jeunes soldats se battent pour leur survie.",
+      "genres": ["Action", "Drame", "Fantasy"],
+      "studio": "WIT Studio",
+      "release_date": "2013-04-06",
+      "cover_image": "../assets/images/animes/attaconTitanCover.jpg"
+    },
+    {
+      "title": "My Hero Academia",
+      "synopsis": "Dans un monde où la majorité des humains possèdent des super-pouvoirs, un jeune garçon sans pouvoirs rêve de devenir un héros.",
+      "genres": ["Action", "Super-héros", "Shounen"],
+      "studio": "Bones",
+      "release_date": "2016-04-03",
+      "cover_image": "../assets/images/animes/myHeroAcademiaCover.jpg"
+    },
+    {
+      "title": "Death Note",
+      "synopsis": "Un lycéen trouve un carnet qui lui permet de tuer n'importe qui en écrivant le nom de la personne dedans.",
+      "genres": ["Thriller", "Psychologique", "Mystère"],
+      "studio": "Madhouse",
+      "release_date": "2006-10-03",
+      "cover_image": "../assets/images/animes/deathNoteCover.jpg"
+    },
+    {
+      "title": "Fullmetal Alchemist: Brotherhood",
+      "synopsis": "Deux frères, Edward et Alphonse Elric, tentent de récupérer leurs corps après un accident d'alchimie qui a mal tourné.",
+      "genres": ["Action", "Aventure", "Fantasy"],
+      "studio": "Studio Bones",
+      "release_date": "2009-04-05",
+      "cover_image": "../assets/images/animes/fullMetalAlchimistCover.jpg"
+    },
+    {
+      "title": "Dragon Ball Z",
+      "synopsis": "Son Goku et ses amis se battent pour défendre la Terre contre des ennemis puissants.",
+      "genres": ["Action", "Aventure", "Shounen"],
+      "studio": "Toei Animation",
+      "release_date": "1989-04-26",
+      "cover_image": "../assets/images/animes/dragonBallZCover.jpg"
+    },
+    {
+      "title": "Sword Art Online",
+      "synopsis": "Les joueurs se retrouvent coincés dans un jeu de réalité virtuelle et doivent se battre pour survivre et s'échapper.",
+      "genres": ["Action", "Science-fiction", "Aventure"],
+      "studio": "A-1 Pictures",
+      "release_date": "2012-07-08",
+      "cover_image": "../assets/images/animes/saoCover.jpg"
+    },
+    {
+      "title": "Tokyo Ghoul",
+      "synopsis": "Ken Kaneki, un étudiant, devient un demi-ghoul après un accident, et doit apprendre à vivre avec sa nouvelle identité.",
+      "genres": ["Action", "Horreur", "Surnaturel"],
+      "studio": "Studio Pierrot",
+      "release_date": "2014-07-03",
+      "cover_image": "../assets/images/animes/tokyoGhoulCover.jpg"
+    },
+    {
+      "title": "Neon Genesis Evangelion",
+      "synopsis": "Un adolescent est recruté pour piloter un mecha afin de combattre des créatures mystérieuses appelées Anges.",
+      "genres": ["Action", "Mecha", "Psychologique"],
+      "studio": "Gainax",
+      "release_date": "1995-10-05",
+      "cover_image": "../assets/images/animes/neonGenesisEvangelion.jpg"
+    },
+    {
+      "title": "One Punch Man",
+      "synopsis": "Saitama est un homme ordinaire qui peut vaincre n'importe quel ennemi d'un seul coup, mais cherche encore un adversaire digne de lui.",
+      "genres": ["Action", "Comédie", "Super-héros"],
+      "studio": "Madhouse",
+      "release_date": "2015-10-05",
+      "cover_image": "../assets/images/animes/onePunchManCover.jpg"
+    },
+    {
+      "title": "Demon Slayer: Kimetsu no Yaiba",
+      "synopsis": "Tanjiro Kamado, un jeune garçon, devient un chasseur de démons après que sa famille ait été massacrée par des démons.",
+      "genres": ["Action", "Fantasy", "Surnaturel"],
+      "studio": "ufotable",
+      "release_date": "2019-04-06",
+      "cover_image": "../assets/images/animes/demonSlayerCover.jpg"
+    },
+    {
+      "title": "Hunter x Hunter",
+      "synopsis": "Gon Freecss part à la recherche de son père, un Hunter légendaire, tout en se faisant de nouveaux amis et en affrontant de puissants ennemis.",
+      "genres": ["Action", "Aventure", "Shounen"],
+      "studio": "Madhouse",
+      "release_date": "2011-10-02",
+      "cover_image": "../assets/images/animes/hunterXHunterCover.jpg"
+    },
+    {
+      "title": "Code Geass: Lelouch of the Rebellion",
+      "synopsis": "Lelouch vi Britannia, un prince déchu, obtient un pouvoir mystérieux et utilise ce pouvoir pour se venger de l'Empire de Britannia.",
+      "genres": ["Action", "Mecha", "Psychologique"],
+      "studio": "Sunrise",
+      "release_date": "2006-10-05",
+      "cover_image": "../assets/images/animes/codeGeassCover.jpg"
+    },
+    {
+      "title": "Fate/Zero",
+      "synopsis": "Sept mages invoquent des esprits héroïques pour participer à un tournoi sanglant connu sous le nom de Guerre du Saint Graal.",
+      "genres": ["Action", "Fantasy", "Super-pouvoirs"],
+      "studio": "ufotable",
+      "release_date": "2011-10-02",
+      "cover_image": "../assets/images/animes/fateZeroCover.jpg"
+    },
+    {
+      "title": "Cowboy Bebop",
+      "synopsis": "Un groupe de chasseurs de primes voyage à travers l'espace, se confrontant à des criminels tout en poursuivant leur propre quête personnelle.",
+      "genres": ["Action", "Science-fiction", "Space Western"],
+      "studio": "Sunrise",
+      "release_date": "1998-04-03",
+      "cover_image": "../assets/images/animes/cowboyBebop.jpg"
+    },
+    {
+      "title": "Mob Psycho 100",
+      "synopsis": "Un jeune garçon doté de pouvoirs psychiques cherche à mener une vie normale tout en étant constamment confronté à des situations surnaturelles.",
+      "genres": ["Action", "Comédie", "Super-pouvoirs"],
+      "studio": "Bones",
+      "release_date": "2016-07-12",
+      "cover_image": "../assets/images/animes/mobPsychoCover.jpg"
+    },
+    {
+      "title": "Your Name",
+      "synopsis": "Deux adolescents échangent leurs corps de manière mystérieuse, et doivent naviguer dans leurs vies respectives pour découvrir la vérité.",
+      "genres": ["Romance", "Drame", "Fantasy"],
+      "studio": "CoMix Wave Films",
+      "release_date": "2016-08-26",
+      "cover_image": "../assets/images/animes/yourNameCover.jpg"
+    },
+    {
+      "title": "Trigun",
+      "synopsis": "Vash the Stampede, un pistolero au cœur d'or, voyage à travers un désert, fuyant les chasseurs de primes tout en cherchant la paix.",
+      "genres": ["Action", "Aventure", "Science-fiction"],
+      "studio": "Madhouse",
+      "release_date": "1998-04-01",
+      "cover_image": "../assets/images/animes/trigunCover.jpg"
+    },
+    {
+      "title": "Steins;Gate",
+      "synopsis": "Un groupe de jeunes scientifiques découvre une méthode pour envoyer des messages dans le passé, provoquant des événements inattendus.",
+      "genres": ["Science-fiction", "Thriller", "Drame"],
+      "studio": "White Fox",
+      "release_date": "2011-04-06",
+      "cover_image": "../assets/images/animes/steinsGateCover.jpg"
+    },
+    {
+      "title": "Bleach",
+      "synopsis": "Ichigo Kurosaki, un adolescent, devient un Shinigami et doit protéger les âmes des démons tout en affrontant des ennemis puissants.",
+      "genres": ["Action", "Aventure", "Shounen"],
+      "studio": "Pierrot",
+      "release_date": "2004-10-05",
+      "cover_image": "../assets/images/animes/bleachCover.jpg"
+    },
+    {
+      "title": "Naruto Shippuden",
+      "synopsis": "Naruto revient après une longue période d'entraînement pour aider ses amis et combattre des ennemis redoutables.",
+      "genres": ["Action", "Aventure", "Shounen"],
+      "studio": "Studio Pierrot",
+      "release_date": "2007-02-15",
+      "cover_image": "../assets/images/animes/narutoShippudenCover.jpg"
+    },
+    {
+      "title": "Fairy Tail",
+      "synopsis": "Un groupe de mages appartenant à la guilde Fairy Tail part en quête d'aventures à travers un monde rempli de magie.",
+      "genres": ["Action", "Fantasy", "Shounen"],
+      "studio": "A-1 Pictures",
+      "release_date": "2009-10-12",
+      "cover_image": "../assets/images/animes/fairyTailCover.jpg"
+    },
+    {
+      "title": "Mob Psycho 100 II",
+      "synopsis": "La suite de l'histoire de Mob et de ses pouvoirs psychiques, où il continue d'évoluer en tant qu'adolescent et en tant qu'humain.",
+      "genres": ["Action", "Comédie", "Super-pouvoirs"],
+      "studio": "Bones",
+      "release_date": "2019-01-07",
+      "cover_image": "../assets/images/animes/mobPsychoCover.jpg"
+    },
+    {
+        "title": "Akira",
+        "synopsis": "Dans un Tokyo post-apocalyptique, Kaneda tente de sauver son ami Tetsuo, qui développe des pouvoirs psychiques incontrôlables.",
+        "genres": ["Action", "Science-fiction", "Cyberpunk"],
+        "studio": "Tokyo Movie Shinsha",
+        "release_date": "1988-07-16",
+        "cover_image": "../assets/images/animes/akiraCover.jpg"
+      },
+      {
+        "title": "Gintama",
+        "synopsis": "Gintoki Sakata, un samouraï déjanté, lutte contre les envahisseurs extraterrestres tout en gérant des tâches improbables avec ses amis.",
+        "genres": ["Action", "Comédie", "Aventure"],
+        "studio": "Sunrise",
+        "release_date": "2005-04-04",
+        "cover_image": "../assets/images/animes/gintamaCover.jpg"
+      },
+      {
+        "title": "JoJo's Bizarre Adventure",
+        "synopsis": "Les Joestar, une famille de guerriers aux pouvoirs surnaturels, luttent contre des ennemis variés dans des aventures incroyablement étranges.",
+        "genres": ["Action", "Aventure", "Super-pouvoirs"],
+        "studio": "David Production",
+        "release_date": "2012-10-05",
+        "cover_image": "../assets/images/animes/jojosBizarreAdventureCover.jpg"
+      },
+      {
+        "title": "Made in Abyss",
+        "synopsis": "Riko, une jeune fille, descend dans un gouffre mystérieux, l'Abysse, pour retrouver sa mère disparue, mais elle rencontre des dangers inimaginables.",
+        "genres": ["Aventure", "Fantasy", "Drame"],
+        "studio": "Kinema Citrus",
+        "release_date": "2017-07-07",
+        "cover_image": "../assets/images/animes/madeInAbyssCover.jpg"
+      },
+      {
+        "title": "The Promised Neverland",
+        "synopsis": "Un groupe d'enfants découvre un terrible secret sur leur orphelinat et se bat pour échapper à une terrible destinée.",
+        "genres": ["Thriller", "Mystère", "Horreur"],
+        "studio": "CloverWorks",
+        "release_date": "2019-01-11",
+        "cover_image": "../assets/images/animes/thePromisedNeverlandCover.jpg"
+      },
+      {
+        "title": "Parasyte: The Maxim",
+        "synopsis": "Shinichi Izumi, un adolescent, doit coexister avec un parasite extraterrestre qui a envahi sa main droite, tout en combattant d'autres parasites.",
+        "genres": ["Horreur", "Action", "Science-fiction"],
+        "studio": "Madhouse",
+        "release_date": "2014-10-09",
+        "cover_image": "../assets/images/animes/parasyteCover.jpg"
+      }, 
+      {
+        "title": "Vinland Saga",
+        "synopsis": "Thorfinn, un jeune Viking, cherche à venger la mort de son père en combattant aux côtés du chef de guerre Askeladd, tout en découvrant les horreurs et la vérité sur la guerre.",
+        "genres": ["Action", "Aventure", "Drame", "Historique"],
+        "studio": "WIT Studio",
+        "release_date": "2019-07-07",
+        "cover_image": "../assets/images/animes/vinlandSagaCover.jpg"
+      }      
+  ]
+  
