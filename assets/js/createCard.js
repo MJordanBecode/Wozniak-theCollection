@@ -6,7 +6,7 @@ import { fetchAllData } from "./fetchDB.js"; // Fonction pour récupérer les do
 const SELECTORDIVANIMECONTAINER = SelectorDivAnimeContainer();
 
 // Ajouter un gap entre les cartes
-SELECTORDIVANIMECONTAINER.classList.add("flex","items-center", "flex-col", "gap-4");
+SELECTORDIVANIMECONTAINER.classList.add("flex","items-center", "flex-col", "gap-4","lg:grid","lg:grid-cols-[500px_500px_500px]","lg:grid-row-3","lg:gap-4","lg:w-full","lg:justify-items-center","lg:justify-evenly");
 
 // Fonction principale pour créer une carte
 export function createCard() {
@@ -16,7 +16,7 @@ export function createCard() {
         data.forEach(item => {
           // Créer une div englobante
           const wrapperDiv = document.createElement("div");
-          wrapperDiv.classList.add("anime-card-wrapper", "w-fit", "bg-red-100", "rounded-lg", "shadow-md","p-8", "flex", "items-center", "gap-4");
+          wrapperDiv.classList.add("anime-card-wrapper", "bg-red-100", "rounded-lg", "shadow-md","p-8", "flex", "items-center", "gap-4", "lg:w-auto");
 
           const synopsisTitle = document.createElement("div");
           synopsisTitle.classList.add("rouge", "flex", "flex-col", "justify-between","w-0", "overflow-hidden", "h-40", "shadow-md", "rounded-lg", "transition-all", "duration-500", "ease-in-out", "mt-2");
@@ -29,7 +29,7 @@ export function createCard() {
           const img = document.createElement("img");
           img.src = item.cover_image;
           img.alt = item.title;
-          img.classList.add("rounded-lg", "w-40", "content-cover");
+          img.classList.add("rounded-lg", "w-40", "content-cover", "lg:w-80");
 
           // Création du bouton
           const toggleButton = document.createElement("button");
