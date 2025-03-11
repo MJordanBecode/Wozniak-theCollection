@@ -69,7 +69,7 @@
       "genres": ["Action", "Horreur", "Surnaturel"],
       "studio": "Studio Pierrot",
       "release_date": "2014-07-03",
-      "cover_image": "../assets/images/animes/tokyoGhoulCover.jpg"
+      "cover_image": "../assets/images/animes/tokyGhoulCover.jpg"
     },
     {
       "title": "Neon Genesis Evangelion",
@@ -125,7 +125,7 @@
       "genres": ["Action", "Science-fiction", "Space Western"],
       "studio": "Sunrise",
       "release_date": "1998-04-03",
-      "cover_image": "../assets/images/animes/cowboyBebop.jpg"
+      "cover_image": "../assets/images/animes/cowoyBebop.jpg"
     },
     {
       "title": "Mob Psycho 100",
