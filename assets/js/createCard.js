@@ -6,7 +6,7 @@ import { fetchAllData } from "./fetchDB.js"; // Fonction pour récupérer les do
 const SELECTORDIVANIMECONTAINER = SelectorDivAnimeContainer();
 
 // Ajouter un gap entre les cartes
-SELECTORDIVANIMECONTAINER.classList.add("flex", "flex-col", "gap-4");
+SELECTORDIVANIMECONTAINER.classList.add("flex","items-center", "flex-col", "gap-4");
 
 // Fonction principale pour créer une carte
 export function createCard() {
@@ -16,10 +16,10 @@ export function createCard() {
         data.forEach(item => {
           // Créer une div englobante
           const wrapperDiv = document.createElement("div");
-          wrapperDiv.classList.add("anime-card-wrapper", "p-4", "m-6", "w-fit", "bg-gray-100", "rounded-lg", "shadow-md", "flex", "items-center", "gap-4");
+          wrapperDiv.classList.add("anime-card-wrapper", "w-fit", "bg-red-100", "rounded-lg", "shadow-md","p-8", "flex", "items-center", "gap-4");
 
           const synopsisTitle = document.createElement("div");
-          synopsisTitle.classList.add("rouge", "w-0", "overflow-hidden", "h-40", "shadow-md", "rounded-lg", "transition-all", "duration-500", "ease-in-out", "mt-2");
+          synopsisTitle.classList.add("rouge", "flex", "flex-col", "justify-between","w-0", "overflow-hidden", "h-40", "shadow-md", "rounded-lg", "transition-all", "duration-500", "ease-in-out", "mt-2");
 
           // Créer un conteneur pour l'image et le bouton
           const imgButtonContainer = document.createElement("div");
@@ -69,6 +69,8 @@ export function createCard() {
           const date = document.createElement("p");
           date.classList.add("text-sm", "text-gray-600");
           date.textContent = item.release_date;
+
+          const GENRE = document.createElement("p");
           // Ajouter le conteneur genre et date à la description
           synopsis.appendChild(containerCreationDateMoreKind);
 
@@ -77,7 +79,8 @@ export function createCard() {
           wrapperDiv.appendChild(synopsisTitle); // Ajouter la div du synopsis
           synopsisTitle.appendChild(title); // Ajouter le titre au synopsis
           synopsisTitle.appendChild(synopsis); // Ajouter la description au synopsis
-          containerCreationDateMoreKind.appendChild(date);
+          synopsisTitle.appendChild(containerCreationDateMoreKind);
+          containerCreationDateMoreKind.appendChild(date)
 
           // Ajouter la div englobante au conteneur principal
           SELECTORDIVANIMECONTAINER.appendChild(wrapperDiv);
