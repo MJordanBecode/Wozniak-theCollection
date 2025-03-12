@@ -20,15 +20,96 @@
         </nav>
     </header>
     <main>
-        <div>
-            <form>
-                <label for="text">sort</label>
-                <input type="checkbox" name="action" id="action">
-            </form>
+        <div class="container mx-auto p-4">
+            <h2 class="text-xl font-semibold text-center">Filtres de Genres</h2>
+            <div id="genre-filters" class="flex flex-wrap justify-center gap-4 mt-4">
+                <label for="action" class="flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" name="action" id="action" class="checkbox" value="Action">
+                    Action
+                </label>
+                <label for="adventure" class="flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" name="adventure" id="adventure" class="checkbox" value="Aventure">
+                    Aventure
+                </label>
+                <label for="shounen" class="flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" name="shounen" id="shounen" class="checkbox" value="Shounen">
+                    Shounen
+                </label>
+                <label for="comedy" class="flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" name="comedy" id="comedy" class="checkbox" value="Comédie">
+                    Comédie
+                </label>
+                <label for="drama" class="flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" name="drama" id="drama" class="checkbox" value="Drame">
+                    Drame
+                </label>
+                <label for="fantasy" class="flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" name="fantasy" id="fantasy" class="checkbox" value="Fantasy">
+                    Fantasy
+                </label>
+                <label for="sci-fi" class="flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" name="sci-fi" id="sci-fi" class="checkbox" value="Science-fiction">
+                    Science-fiction
+                </label>
+                <label for="super-pouvoirs" class="flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" name="super-pouvoirs" id="super-pouvoirs" class="checkbox" value="Super-pouvoirs">
+                    Super-pouvoirs
+                </label>
+                <label for="horror" class="flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" name="horror" id="horror" class="checkbox" value="Horreur">
+                    Horreur
+                </label>
+                <label for="supernaturel" class="flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" name="supernaturel" id="supernaturel" class="checkbox" value="Surnaturel">
+                    Surnaturel
+                </label>
+                <label for="psychologique" class="flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" name="psychologique" id="psychologique" class="checkbox" value="Psychologique">
+                    Psychologique
+                </label>
+                <label for="mecha" class="flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" name="mecha" id="mecha" class="checkbox" value="Mecha">
+                    Mecha
+                </label>
+                <label for="thriller" class="flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" name="thriller" id="thriller" class="checkbox" value="Thriller">
+                    Thriller
+                </label>
+                <label for="mystery" class="flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" name="mystery" id="mystery" class="checkbox" value="Mystère">
+                    Mystère
+                </label>
+                <label for="cyberpunk" class="flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" name="cyberpunk" id="cyberpunk" class="checkbox" value="Cyberpunk">
+                    Cyberpunk
+                </label>
+                <label for="space-western" class="flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" name="space-western" id="space-western" class="checkbox" value="Space Western">
+                    Space Western
+                </label>
+                <label for="romance" class="flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" name="romance" id="romance" class="checkbox" value="Romance">
+                    Romance
+                </label>
+                <label for="historique" class="flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" name="historique" id="historique" class="checkbox" value="Historique">
+                    Historique
+                </label>
+                <label for="super-heros" class="flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" name="super-heros" id="super-heros" class="checkbox" value="Super-héros">
+                    Super-héros
+                </label>
+            </div>
+            <div class="text-center mt-4">
+                <button id="reset-filter" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">
+                    Réinitialiser les filtres
+                </button>
+            </div>
+            <!-- Conteneur des cartes d'anime -->
+            <div id="containerAnimeCard" class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
         </div>
-        
-        <div id="containerAnimeCard"></div>
     </main>
     <footer></footer>
 </body>
 </html>
+
