@@ -1,88 +1,203 @@
 // Importations
 import { SelectorDivAnimeContainer } from "./mainSelector.js"; // Fonction pour sélectionner le conteneur
 import { fetchAllData } from "./fetchDB.js"; // Fonction pour récupérer les données
+import getCardWrapperByIndex from "./removeCard.js";
 
-// Sélectionner le conteneur où les cartes seront ajoutées
+// Sélection du conteneur principal
 const SELECTORDIVANIMECONTAINER = SelectorDivAnimeContainer();
 
-// Ajouter un gap entre les cartes
-SELECTORDIVANIMECONTAINER.classList.add("flex","items-center", "flex-col", "gap-4","lg:grid","lg:grid-cols-[500px_500px_500px]","lg:grid-row-3","lg:gap-4","lg:w-full","lg:justify-items-center","lg:justify-evenly");
+// Ajout d'un gap entre les cartes
+SELECTORDIVANIMECONTAINER.classList.add(
+  "flex", "items-center", "flex-col", "gap-4",
+  "lg:grid", "lg:grid-cols-[500px_500px_500px]", "lg:grid-row-3",
+  "lg:gap-4", "lg:w-full", "lg:justify-items-center", "lg:justify-evenly"
+);
+
+function getBackgroundColor(genre) {
+  switch (genre) {
+    case "Action":
+      return "bg-red-300"; // Red
+    case "Aventure":
+      return "bg-orange-300"; // Orange
+    case "Shounen":
+      return "bg-blue-300"; // Blue
+    case "Comédie":
+      return "bg-yellow-300"; // Yellow
+    case "Drame":
+      return "bg-purple-300"; // Purple
+    case "Fantasy":
+      return "bg-green-300"; // Green
+    case "Science-fiction":
+      return "bg-gray-300"; // Gray
+    case "Super-pouvoirs":
+      return "bg-cyan-300"; // Cyan
+    case "Horreur":
+      return "bg-purple-600"; // Darker gray for horror (lighter than black)
+    case "Surnaturel":
+      return "bg-red-300"; // Dark Red
+    case "Psychologique":
+      return "bg-blue-300"; // Dark Blue
+    case "Mecha":
+      return "bg-stone-300"; // Steel Blue (Tailwind does not have steelblue by default)
+    case "Thriller":
+      return "bg-amber-500"; // Brown
+    case "Mystère":
+      return "bg-teal-300"; // Teal
+    case "Cyberpunk":
+      return "bg-cyan-300"; // Dark Cyan
+    case "Space Western":
+      return "bg-indigo-300"; // Navy
+    case "Romance":
+      return "bg-pink-500"; // Pink
+    case "Historique":
+      return "bg-yellow-300"; // Goldenrod
+    case "Super-héros": // New genre added
+      return "bg-blue-500"; // Blue for Super-héros
+    default:
+      return "bg-white"; // White
+  }
+}
 
 // Fonction principale pour créer une carte
 export function createCard() {
   fetchAllData()
     .then(data => {
       if (SELECTORDIVANIMECONTAINER) {
-        data.forEach(item => {
+        data.forEach((item, i) => {
           // Créer une div englobante
           const wrapperDiv = document.createElement("div");
-          wrapperDiv.classList.add("anime-card-wrapper", "bg-red-100", "rounded-lg", "shadow-md","p-8", "flex", "items-center", "gap-4", "lg:w-auto");
+          wrapperDiv.classList.add(
+            `anime-card-wrapper-${i}`, "bg-white", "rounded-lg",
+            "shadow-[12px_4px_6px_-1px_rgba(0,0,0,0.3)]",
+            "p-8", "flex", "items-center", "gap-4", "lg:w-auto",
+            "border", "border-[rgba(170,167,168,0.3)]"
+          );
 
-          const synopsisTitle = document.createElement("div");
-          synopsisTitle.classList.add("rouge", "flex", "flex-col", "justify-between","w-0", "overflow-hidden", "h-40", "shadow-md", "rounded-lg", "transition-all", "duration-500", "ease-in-out", "mt-2");
-
-          // Créer un conteneur pour l'image et le bouton
-          const imgButtonContainer = document.createElement("div");
-          imgButtonContainer.classList.add("flex", "flex-col", "items-center"); // Flex vertical et centré
+          // Conteneur pour l'image et les genres
+          const CONTAINERIMAGEGENRE = document.createElement("div");
+          CONTAINERIMAGEGENRE.classList.add("flex", "flex-col", "items-center", "gap-2", "relative"); // relative pour positionner le X
 
           // Création de l'image
           const img = document.createElement("img");
           img.src = item.cover_image;
           img.alt = item.title;
-          img.classList.add("rounded-lg", "w-40", "content-cover", "lg:w-80");
+          img.classList.add("rounded-lg", "w-40", "object-cover", "lg:w-70", "ml-[5%]", "mt-[5%]");
+          img.style.marginLeft = "5%"; // Ajout du margin-left
+          img.style.marginTop = "5%";  // Ajout du margin-top
 
-          // Création du bouton
+          // Création du bouton "X"
+          const closeButton = document.createElement("div");
+          closeButton.textContent = "X";  // Le X
+          closeButton.classList.add("absolute", "top-0", "right-0", "bg-red-500", "text-white", "rounded-full", "w-6", "h-6", "flex", "items-center", "justify-center", "cursor-pointer", "font-bold");
+
+          // Éventuellement, ajouter une action au X (par exemple, pour supprimer l'image ou l'élément)
+          closeButton.addEventListener("click", (e) => {
+            e.stopPropagation(); // Empêche la propagation de l'événement
+            wrapperDiv.remove();  // Cela supprime la carte entière
+          });
+
+          // Ajout du X à l'image
+          CONTAINERIMAGEGENRE.appendChild(closeButton);
+
+          // Ajout de l'image au conteneur
+          CONTAINERIMAGEGENRE.appendChild(img);
+
+          // Conteneur des genres
+          const genreContainer = document.createElement("div");
+          genreContainer.classList.add("flex", "gap-2", "flex-wrap", "justify-center", "mt-2", "w-full");
+
+          // Traitement des genres
+          if (Array.isArray(item.genres)) {
+            item.genres.forEach(genre => {
+              const genreDiv = document.createElement("div");
+              const bgColor = getBackgroundColor(genre);  // Utilisation de la fonction pour obtenir la couleur
+              genreDiv.classList.add("text-xs", "font-semibold", "px-3", "py-1", "rounded-full", bgColor, "text-gray-700"); // Appliquer la couleur de fond dynamique
+              genreDiv.textContent = genre.trim();
+              genreDiv.style.paddingLeft = "5%"; // Ajout du margin-left
+              genreDiv.style.paddingRight = "5%";  // Ajout du margin-top
+              genreContainer.appendChild(genreDiv);
+            });
+          } else if (typeof item.genres === "string") {
+            const genres = item.genres.split(",");
+            genres.forEach(genre => {
+              const genreDiv = document.createElement("div");
+              const bgColor = getBackgroundColor(genre);  // Utilisation de la fonction pour obtenir la couleur
+              genreDiv.classList.add("text-xs", "font-semibold", "px-3", "py-1", "rounded-full", bgColor, "text-gray-700"); // Appliquer la couleur de fond dynamique
+              genreDiv.textContent = genre.trim();
+              genreContainer.appendChild(genreDiv);
+            });
+          } else {
+            const defaultGenreDiv = document.createElement("div");
+            defaultGenreDiv.classList.add("text-xs", "font-semibold", "px-3", "py-1", "rounded-full", "bg-gray-200", "text-gray-700","pl-[2%]");
+            defaultGenreDiv.textContent = "Genre inconnu";
+            genreContainer.appendChild(defaultGenreDiv);
+          }
+
+          // Ajout du conteneur des genres à CONTAINERIMAGEGENRE
+          CONTAINERIMAGEGENRE.appendChild(genreContainer);
+
+          // Création du bouton SVG
           const toggleButton = document.createElement("button");
-          toggleButton.classList.add("bg-blue-500", "text-white", "px-4", "py-2", "rounded-lg", "mt-2", "transition", "duration-300", "hover:bg-blue-700");
-          toggleButton.textContent = "Voir plus";
+          toggleButton.innerHTML = `  
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 4C4.5 4 2 12 2 12C2 12 4.5 20 12 20C19.5 20 22 12 22 12C22 12 19.5 4 12 4Z" stroke="#1C274C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="12" cy="12" r="3" stroke="#1C274C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          `;
+          toggleButton.classList.add("w-8", "h-8", "cursor-pointer", "mt-2", "transition", "duration-300", "hover:opacity-75");
+
+          // Ajout du bouton SVG dans le conteneur image + genre
+          CONTAINERIMAGEGENRE.appendChild(toggleButton);
+
+          // Conteneur du synopsis
+          const synopsisTitle = document.createElement("div");
+          synopsisTitle.classList.add(
+            "bg-white", "shadow-md", "rounded-lg",
+            "w-0", "overflow-hidden", "h-40",
+            "transition-all", "duration-500", "ease-in-out", "mt-2", "p-0"
+          );
+
+          // Animation du synopsis au clic
           toggleButton.addEventListener("click", () => {
             if (synopsisTitle.classList.contains("w-0")) {
-              synopsisTitle.classList.remove("w-0");
+              synopsisTitle.classList.remove("w-0", "p-0");
               synopsisTitle.classList.add("w-64", "p-4");
-              toggleButton.textContent = "Voir moins";
             } else {
               synopsisTitle.classList.remove("w-64", "p-4");
-              synopsisTitle.classList.add("w-0");
-              toggleButton.textContent = "Voir plus";
+              synopsisTitle.classList.add("w-0", "p-0");
             }
           });
 
-          // Création du conteneur pour Genre et date de création
-          const containerCreationDateMoreKind = document.createElement("div");
-          containerCreationDateMoreKind.classList.add("aaaaar"); // Tu peux ajouter des classes spécifiques pour le styliser
-
-          // Ajouter l'image et le bouton au conteneur
-          imgButtonContainer.appendChild(img);
-          imgButtonContainer.appendChild(toggleButton);
+          // Conteneur infos
+          const containerInfo = document.createElement("div");
+          containerInfo.classList.add("anime-info-container");
 
           // Création du titre
           const title = document.createElement("h3");
           title.classList.add("text-lg", "font-bold", "text-gray-800");
           title.textContent = item.title;
 
-          // Création de la description
+          // Création du synopsis
           const synopsis = document.createElement("p");
           synopsis.classList.add("text-sm", "text-gray-600");
           synopsis.textContent = item.synopsis;
 
-          //ajouter date + genre 
+          // Date de sortie
           const date = document.createElement("p");
           date.classList.add("text-sm", "text-gray-600");
           date.textContent = item.release_date;
 
-          const GENRE = document.createElement("p");
-          // Ajouter le conteneur genre et date à la description
-          synopsis.appendChild(containerCreationDateMoreKind);
+          // Ajouter les éléments
+          containerInfo.appendChild(date);
 
-          // Ajouter les éléments à la div englobante
-          wrapperDiv.appendChild(imgButtonContainer); // Ajouter le conteneur image et bouton
-          wrapperDiv.appendChild(synopsisTitle); // Ajouter la div du synopsis
-          synopsisTitle.appendChild(title); // Ajouter le titre au synopsis
-          synopsisTitle.appendChild(synopsis); // Ajouter la description au synopsis
-          synopsisTitle.appendChild(containerCreationDateMoreKind);
-          containerCreationDateMoreKind.appendChild(date)
+          synopsisTitle.appendChild(title);
+          synopsisTitle.appendChild(synopsis);
+          synopsisTitle.appendChild(containerInfo);
 
-          // Ajouter la div englobante au conteneur principal
+          // Ajout des éléments dans la carte
+          wrapperDiv.appendChild(CONTAINERIMAGEGENRE);
+          wrapperDiv.appendChild(synopsisTitle);
+
           SELECTORDIVANIMECONTAINER.appendChild(wrapperDiv);
         });
       } else {
